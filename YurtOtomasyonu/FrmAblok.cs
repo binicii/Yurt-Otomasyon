@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace YurtOtomasyonu
         public FrmAblok()
         {
             InitializeComponent();
+
+            SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-HMA2FOJ;Initial Catalog=YurtOtomasyonu;Integrated Security=True");
         }
 
         private void FrmAblok_Load(object sender, EventArgs e)
@@ -32,6 +35,15 @@ namespace YurtOtomasyonu
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand komutsil = new SqlCommand("delete from A_Blok_Stok where Ablok_id=@k6", baglanti);
+            komutsil.Parameters.AddWithValue("@k6", TxtAblokid.Text);
+            komutsil.ExecuteNonQuery();
+            baglanti.Close();
         }
     }
 }
