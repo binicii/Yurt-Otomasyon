@@ -39,11 +39,22 @@ namespace YurtOtomasyonu
 
         private void button3_Click(object sender, EventArgs e)
         {
-            baglanti.Open();
-            SqlCommand komutsil = new SqlCommand("delete from A_Blok_Stok where Ablok_id=@k6", baglanti);
-            komutsil.Parameters.AddWithValue("@k6", TxtAblokid.Text);
-            komutsil.ExecuteNonQuery();
-            baglanti.Close();
+            try
+            {
+                baglanti.Open();
+                SqlCommand komutsil = new SqlCommand("delete from A_Blok_Stok where Ablok_id=@k6", baglanti);
+                komutsil.Parameters.AddWithValue("@k6", TxtAblokid.Text);
+                komutsil.ExecuteNonQuery();
+                baglanti.Close();
+                MessageBox.Show("Kayıt Silindi");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Hata!!! Tekrar Deneyiniz");
+            }
         }
+
+    }
     }
 }
