@@ -39,7 +39,7 @@ namespace YurtOtomasyonu
             }
             baglanti.Close();
                     
-            baglanti.Close();
+    
 
         }
     }
