@@ -69,6 +69,12 @@
     <Compile Include="FrmAnaForm.Designer.cs">
       <DependentUpon>FrmAnaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBblok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBblok.Designer.cs">
+      <DependentUpon>FrmBblok.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBolumler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAnaForm.resx">
       <DependentUpon>FrmAnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBblok.resx">
+      <DependentUpon>FrmBblok.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBolumler.resx">
       <DependentUpon>FrmBolumler.cs</DependentUpon>
