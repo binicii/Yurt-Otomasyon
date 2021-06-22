@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace YurtOtomasyonu
 {
-    public partial class FrmAblok: Form
+    public partial class FrmAblok : Form
     {
         public FrmAblok()
         {
             InitializeComponent();
 
-            SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-HMA2FOJ;Initial Catalog=YurtOtomasyonu;Integrated Security=True");
+
         }
         SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-HMA2FOJ;Initial Catalog=YurtOtomasyonu;Integrated Security=True");
 
@@ -56,6 +56,6 @@ namespace YurtOtomasyonu
             }
         }
 
-        }
     }
 }
+

@@ -36,7 +36,6 @@ namespace YurtOtomasyonu
             this.aBlokStokBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.TxtDolapSayisi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@ namespace YurtOtomasyonu
             this.masaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yatakDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.yurtOtomasyonuDataSet15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aBlokStokBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -96,17 +96,6 @@ namespace YurtOtomasyonu
             this.button2.TabIndex = 14;
             this.button2.Text = "GÜNCELLE";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(12, 416);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 40);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "KAYDET";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label7
             // 
@@ -296,16 +285,26 @@ namespace YurtOtomasyonu
             this.dataGridView1.Size = new System.Drawing.Size(513, 336);
             this.dataGridView1.TabIndex = 16;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button1.Location = new System.Drawing.Point(16, 416);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 40);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "KAYDET";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FrmAblok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1027, 493);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.TxtDolapSayisi);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.TxtMasaSayisi);
@@ -338,7 +337,6 @@ namespace YurtOtomasyonu
         private System.Windows.Forms.BindingSource aBlokStokBindingSource;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TxtDolapSayisi;
         private System.Windows.Forms.Label label6;
@@ -359,5 +357,6 @@ namespace YurtOtomasyonu
         private System.Windows.Forms.DataGridViewTextBoxColumn masaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yatakDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }
