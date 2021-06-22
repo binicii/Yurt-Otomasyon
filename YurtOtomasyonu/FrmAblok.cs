@@ -19,6 +19,7 @@ namespace YurtOtomasyonu
 
             SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-HMA2FOJ;Initial Catalog=YurtOtomasyonu;Integrated Security=True");
         }
+        SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-HMA2FOJ;Initial Catalog=YurtOtomasyonu;Integrated Security=True");
 
         private void FrmAblok_Load(object sender, EventArgs e)
         {
@@ -55,6 +56,6 @@ namespace YurtOtomasyonu
             }
         }
 
-    }
+        }
     }
 }
