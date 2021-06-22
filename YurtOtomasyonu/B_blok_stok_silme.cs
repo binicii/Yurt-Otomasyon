@@ -6,4 +6,6 @@ private void Sil_Click(object sender, EventArgs e)
             komutsil.ExecuteNonQuery();
             baglanti.Close();
             MessageBox.Show("Kayıt Silindi");
+
+            
         }
