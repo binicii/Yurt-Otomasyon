@@ -27,6 +27,7 @@ namespace YurtOtomasyonu
 
         private void PersonelİzinFormu_Load(object sender, EventArgs e)
         {
+            baglanti.Open();
             SqlCommand komut2 = new SqlCommand("Select * From PersonelIzin", baglanti);
             SqlDataReader oku = komut2.ExecuteReader();
             ListViewItem ekle = new ListViewItem();
