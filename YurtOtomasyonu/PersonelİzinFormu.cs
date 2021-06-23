@@ -28,6 +28,16 @@ namespace YurtOtomasyonu
         private void PersonelİzinFormu_Load(object sender, EventArgs e)
         {
             baglanti.Open();
+            SqlCommand komut = new SqlCommand("Select * from Personeller", baglanti);
+            SqlDataReader dr = komut.ExecuteReader();
+            while (dr.Read())
+            {
+                comboBox1.Items.Add(dr["PersonelNo"]);
+
+            }
+            baglanti.Close();
+
+            baglanti.Open();
             SqlCommand komut2 = new SqlCommand("Select * From PersonelIzin", baglanti);
             SqlDataReader oku = komut2.ExecuteReader();
             ListViewItem ekle = new ListViewItem();
