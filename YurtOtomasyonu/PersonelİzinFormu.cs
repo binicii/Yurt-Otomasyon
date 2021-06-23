@@ -21,5 +21,19 @@ namespace YurtOtomasyonu
         {
 
         }
+
+        private void PersonelİzinFormu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PersonelİzinFormu f1 = new PersonelİzinFormu();
+            f1.Close();
+            PersonelİzinFormu f2 = new PersonelİzinFormu();
+            f2.Show();
+            this.Hide();
+        }
     }
 }

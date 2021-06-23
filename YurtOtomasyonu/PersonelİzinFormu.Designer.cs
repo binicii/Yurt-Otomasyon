@@ -203,6 +203,7 @@
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "buton1";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -248,6 +249,7 @@
             this.Name = "PersonelİzinFormu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personel İzin Ekranı";
+            this.Load += new System.EventHandler(this.PersonelİzinFormu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
