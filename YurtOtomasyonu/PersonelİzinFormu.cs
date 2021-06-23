@@ -22,7 +22,16 @@ namespace YurtOtomasyonu
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string No = comboBox1.Text;
+            baglanti.Open();
+            SqlCommand cmd = new SqlCommand("Select Ad from Personeller where PersonelNo='" + No + "'", baglanti);
+            cmd.Parameters.AddWithValue("Ad", "string");
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                textBox1.Text = dr["Ad"].ToString();
+            }
+            baglanti.Close();
         }
 
         private void PersonelİzinFormu_Load(object sender, EventArgs e)
