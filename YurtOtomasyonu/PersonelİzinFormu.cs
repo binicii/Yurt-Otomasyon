@@ -32,6 +32,16 @@ namespace YurtOtomasyonu
                 textBox1.Text = dr["Ad"].ToString();
             }
             baglanti.Close();
+
+            baglanti.Open();
+            SqlCommand cmd2 = new SqlCommand("Select Soyad from Personeller where PersonelNo='" + No + "'", baglanti);
+            cmd2.Parameters.AddWithValue("Soyad", "string");
+            SqlDataReader dr2 = cmd2.ExecuteReader();
+            if (dr2.Read())
+            {
+                textBox2.Text = dr2["Soyad"].ToString();
+            }
+            baglanti.Close();
         }
 
         private void PersonelİzinFormu_Load(object sender, EventArgs e)
