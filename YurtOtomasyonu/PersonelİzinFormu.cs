@@ -96,7 +96,24 @@ namespace YurtOtomasyonu
             listView1.Items.Clear();
             SqlCommand komut2 = new SqlCommand("Select * From PersonelIzin", baglanti);
             SqlDataReader oku = komut2.ExecuteReader();
+
+            while (oku.Read())
+            {
+                ListViewItem ekle = new ListViewItem();
+                ekle.Text = oku["IzinId"].ToString();
+                ekle.SubItems.Add(oku["PersonelNo"].ToString());
+                ekle.SubItems.Add(oku["IzinSebebi"].ToString());
+                ekle.SubItems.Add(oku["IzinCikisTarihi"].ToString());
+                ekle.SubItems.Add(oku["IzinDonusTarihi"].ToString());
+                listView1.Items.Add(ekle);
+
+            }
             baglanti.Close();
+            baglanti.Close();
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+
         }
     }
 }
