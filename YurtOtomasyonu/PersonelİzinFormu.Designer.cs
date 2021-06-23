@@ -108,6 +108,7 @@
             this.button2.TabIndex = 81;
             this.button2.Text = "İzin Ekle";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
@@ -222,6 +223,7 @@
             this.button12.TabIndex = 92;
             this.button12.Text = "button12";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // PersonelİzinFormu
             // 

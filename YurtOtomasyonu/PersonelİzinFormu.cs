@@ -58,5 +58,26 @@ namespace YurtOtomasyonu
             f2.Show();
             this.Hide();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("sp_IzinPersonel", baglanti);
+            komut.CommandType = CommandType.StoredProcedure;
+            komut.Parameters.AddWithValue("@PersonelNo", comboBox1.Text);
+            komut.Parameters.AddWithValue("@IzinSebebi", textBox3.Text);
+            komut.Parameters.AddWithValue("@IzinCikisTarihi", kayitTarih.Value.ToString("M/d/y"));
+            komut.Parameters.AddWithValue("@IzinDonusTarihi", dateTimePicker1.Value.ToString("M/d/y"));
+            komut.ExecuteNonQuery();
+            listView1.Items.Clear();
+            SqlCommand komut2 = new SqlCommand("Select * From PersonelIzin", baglanti);
+            SqlDataReader oku = komut2.ExecuteReader();
+            baglanti.Close();
+        }
     }
 }
