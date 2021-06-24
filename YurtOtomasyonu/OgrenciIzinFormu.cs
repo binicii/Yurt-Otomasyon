@@ -67,7 +67,26 @@ namespace YurtOtomasyonu
             komut.Parameters.AddWithValue("@IzinDonusTarihi", dateTimePicker1.Value.ToString("M/d/y"));
             komut.ExecuteNonQuery();
             listView1.Items.Clear();
-            baglanti.Close();
+
+            SqlCommand komut2 = new SqlCommand("Select * From IzinTablo", baglanti);
+            SqlDataReader oku = komut2.ExecuteReader();
+            while (oku.Read())
+            {
+                ListViewItem ekle = new ListViewItem();
+                ekle.Text = oku["IzinNo"].ToString();
+                ekle.SubItems.Add(oku["VeliNo"].ToString());
+                ekle.SubItems.Add(oku["IzinSebebi"].ToString());
+                ekle.SubItems.Add(oku["IzinCikisTarihi"].ToString());
+                ekle.SubItems.Add(oku["IzinDonusTarihi"].ToString());
+                ekle.SubItems.Add(oku["GittigiYer"].ToString());
+                listView1.Items.Add(ekle);
+                baglanti.Close();
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
+
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)
