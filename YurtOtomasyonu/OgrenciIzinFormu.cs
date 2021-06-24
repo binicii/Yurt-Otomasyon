@@ -57,7 +57,17 @@ namespace YurtOtomasyonu
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("sp_OgrenciIzin", baglanti);
+            komut.CommandType = CommandType.StoredProcedure;
+            komut.Parameters.AddWithValue("@VeliNo", comboBox1.Text);
+            komut.Parameters.AddWithValue("@IzinSebebi", textBox3.Text);
+            komut.Parameters.AddWithValue("@GittigiYer", textBox4.Text);
+            komut.Parameters.AddWithValue("@IzinCikisTarihi", kayitTarih.Value.ToString("M/d/y"));
+            komut.Parameters.AddWithValue("@IzinDonusTarihi", dateTimePicker1.Value.ToString("M/d/y"));
+            komut.ExecuteNonQuery();
+            listView1.Items.Clear();
+            baglanti.Close();
         }
 
         private void button12_Click(object sender, EventArgs e)
