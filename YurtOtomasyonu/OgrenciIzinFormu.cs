@@ -47,7 +47,13 @@ namespace YurtOtomasyonu
 
             }
             baglanti.Close();
+
         }
+        private void OgrenciIzinFormu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
