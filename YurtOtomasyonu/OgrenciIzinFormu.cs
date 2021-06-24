@@ -29,6 +29,15 @@ namespace YurtOtomasyonu
 
         }
 
+        private void button12_Click(object sender, EventArgs e)
+        {
+            OgrenciIzinFormu f1 = new OgrenciIzinFormu();
+            f1.Close();
+            OgrenciIzinFormu f2 = new OgrenciIzinFormu();
+            f2.Show();
+            this.Hide();
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
