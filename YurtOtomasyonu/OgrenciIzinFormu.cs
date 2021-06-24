@@ -81,6 +81,7 @@ namespace YurtOtomasyonu
                 ekle.SubItems.Add(oku["GittigiYer"].ToString());
                 listView1.Items.Add(ekle);
                 baglanti.Close();
+                baglanti.Close();
                 textBox1.Clear();
                 textBox2.Clear();
                 textBox3.Clear();
