@@ -21,7 +21,15 @@ namespace YurtOtomasyonu
 
         private void OgrenciIzinFormu_Load_1(object sender, EventArgs e)
         {
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("Select * from Veliler", baglanti);
+            SqlDataReader dr = komut.ExecuteReader();
+            while (dr.Read())
+            {
+                comboBox1.Items.Add(dr["VeliNo"]);
 
+            }
+            baglanti.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
