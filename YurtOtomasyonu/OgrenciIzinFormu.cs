@@ -30,6 +30,23 @@ namespace YurtOtomasyonu
 
             }
             baglanti.Close();
+
+            baglanti.Open();
+            SqlCommand komut2 = new SqlCommand("Select * From IzinTablo", baglanti);
+            SqlDataReader oku = komut2.ExecuteReader();
+            while (oku.Read())
+            {
+                ListViewItem ekle = new ListViewItem();
+                ekle.Text = oku["IzinNo"].ToString();
+                ekle.SubItems.Add(oku["VeliNo"].ToString());
+                ekle.SubItems.Add(oku["IzinSebebi"].ToString());
+                ekle.SubItems.Add(oku["IzinCikisTarihi"].ToString());
+                ekle.SubItems.Add(oku["IzinDonusTarihi"].ToString());
+                ekle.SubItems.Add(oku["GittigiYer"].ToString());
+                listView1.Items.Add(ekle);
+
+            }
+            baglanti.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
