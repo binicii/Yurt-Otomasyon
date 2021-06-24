@@ -57,36 +57,43 @@ namespace YurtOtomasyonu
 
         private void button2_Click(object sender, EventArgs e)
         {
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand("sp_OgrenciIzin", baglanti);
-            komut.CommandType = CommandType.StoredProcedure;
-            komut.Parameters.AddWithValue("@VeliNo", comboBox1.Text);
-            komut.Parameters.AddWithValue("@IzinSebebi", textBox3.Text);
-            komut.Parameters.AddWithValue("@GittigiYer", textBox4.Text);
-            komut.Parameters.AddWithValue("@IzinCikisTarihi", kayitTarih.Value.ToString("M/d/y"));
-            komut.Parameters.AddWithValue("@IzinDonusTarihi", dateTimePicker1.Value.ToString("M/d/y"));
-            komut.ExecuteNonQuery();
-            listView1.Items.Clear();
-
-            SqlCommand komut2 = new SqlCommand("Select * From IzinTablo", baglanti);
-            SqlDataReader oku = komut2.ExecuteReader();
-            while (oku.Read())
+            try
             {
-                ListViewItem ekle = new ListViewItem();
-                ekle.Text = oku["IzinNo"].ToString();
-                ekle.SubItems.Add(oku["VeliNo"].ToString());
-                ekle.SubItems.Add(oku["IzinSebebi"].ToString());
-                ekle.SubItems.Add(oku["IzinCikisTarihi"].ToString());
-                ekle.SubItems.Add(oku["IzinDonusTarihi"].ToString());
-                ekle.SubItems.Add(oku["GittigiYer"].ToString());
-                listView1.Items.Add(ekle);
-                baglanti.Close();
-                baglanti.Close();
-                textBox1.Clear();
-                textBox2.Clear();
-                textBox3.Clear();
-                textBox4.Clear();
+                baglanti.Open();
+                SqlCommand komut = new SqlCommand("sp_OgrenciIzin", baglanti);
+                komut.CommandType = CommandType.StoredProcedure;
+                komut.Parameters.AddWithValue("@VeliNo", comboBox1.Text);
+                komut.Parameters.AddWithValue("@IzinSebebi", textBox3.Text);
+                komut.Parameters.AddWithValue("@GittigiYer", textBox4.Text);
+                komut.Parameters.AddWithValue("@IzinCikisTarihi", kayitTarih.Value.ToString("M/d/y"));
+                komut.Parameters.AddWithValue("@IzinDonusTarihi", dateTimePicker1.Value.ToString("M/d/y"));
+                komut.ExecuteNonQuery();
+                listView1.Items.Clear();
 
+                SqlCommand komut2 = new SqlCommand("Select * From IzinTablo", baglanti);
+                SqlDataReader oku = komut2.ExecuteReader();
+                while (oku.Read())
+                {
+                    ListViewItem ekle = new ListViewItem();
+                    ekle.Text = oku["IzinNo"].ToString();
+                    ekle.SubItems.Add(oku["VeliNo"].ToString());
+                    ekle.SubItems.Add(oku["IzinSebebi"].ToString());
+                    ekle.SubItems.Add(oku["IzinCikisTarihi"].ToString());
+                    ekle.SubItems.Add(oku["IzinDonusTarihi"].ToString());
+                    ekle.SubItems.Add(oku["GittigiYer"].ToString());
+                    listView1.Items.Add(ekle);
+                    baglanti.Close();
+                    baglanti.Close();
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    MessageBox.Show("İzin Verildi");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("HATA!!! Lütfen Kontrol Edip Tekrar Deneyin");
             }
         }
 
