@@ -77,8 +77,15 @@ namespace YurtOtomasyonu
             }
             baglanti.Close();
 
-
-
+            baglanti.Open();
+            SqlCommand cmd2 = new SqlCommand("Select OgrenciTcNo from Veliler where VeliNo='" + No + "'", baglanti);
+            cmd2.Parameters.AddWithValue("OgrenciTcNo", "string");
+            SqlDataReader dr2 = cmd2.ExecuteReader();
+            if (dr2.Read())
+            {
+                textBox2.Text = dr2["OgrenciTcNo"].ToString();
+            }
+            baglanti.Close();
         }
 
         
