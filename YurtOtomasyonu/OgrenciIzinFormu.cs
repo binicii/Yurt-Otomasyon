@@ -41,6 +41,19 @@ namespace YurtOtomasyonu
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            string No = comboBox1.Text;
+            baglanti.Open();
+            SqlCommand cmd = new SqlCommand("Select VeliAd from Veliler where VeliNo='" + No + "'", baglanti);
+            cmd.Parameters.AddWithValue("VeliAd", "string");
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                textBox1.Text = dr["VeliAd"].ToString();
+            }
+            baglanti.Close();
+
+
+
         }
 
         
