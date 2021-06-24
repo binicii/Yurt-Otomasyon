@@ -17,9 +17,21 @@ namespace YurtOtomasyonu
             InitializeComponent();
         }
 
-        private void OgrenciIzinFormu_Load(object sender, EventArgs e)
+        private void OgrenciIzinFormu_Load_1(object sender, EventArgs e)
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
