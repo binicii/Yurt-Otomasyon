@@ -147,6 +147,12 @@
     <Compile Include="FrmYoneticiDuzenle.Designer.cs">
       <DependentUpon>FrmYoneticiDuzenle.cs</DependentUpon>
     </Compile>
+    <Compile Include="OgrenciIzinFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciIzinFormu.Designer.cs">
+      <DependentUpon>OgrenciIzinFormu.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonelİzinFormu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmYoneticiDuzenle.resx">
       <DependentUpon>FrmYoneticiDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciIzinFormu.resx">
+      <DependentUpon>OgrenciIzinFormu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonelİzinFormu.resx">
       <DependentUpon>PersonelİzinFormu.cs</DependentUpon>
