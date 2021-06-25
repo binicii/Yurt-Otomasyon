@@ -20,6 +20,8 @@ namespace YurtOtomasyonu
 
         SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-HMA2FOJ;Initial Catalog=YurtOtomasyonu;Integrated Security=True");
 
+        public object TxtOgrid { get; private set; }
+
         private void MisafirOgrenciFormu_Load(object sender, EventArgs e)
         {
 
@@ -103,7 +105,12 @@ namespace YurtOtomasyonu
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            baglanti.Open();
+            SqlCommand komutsil = new SqlCommand("delete from Ogrenci where Ogrid=@k1", baglanti);
+            SqlParameter sqlParameter = komutsil.Parameters.AddWithValue("@k1", TxtOgrid);
+            komutsil.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("Kayıt Silindi");
         }
     }
 }
