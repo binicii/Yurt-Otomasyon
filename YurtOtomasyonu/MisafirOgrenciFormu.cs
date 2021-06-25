@@ -22,6 +22,17 @@ namespace YurtOtomasyonu
 
         private void MisafirOgrenciFormu_Load(object sender, EventArgs e)
         {
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("Select BolumAd From Bolumler", baglanti); //bolumler tablosundakı BolumAd kısmındakı verılerı cektık.
+            SqlDataReader oku = komut.ExecuteReader();
+            while (oku.Read())
+            {
+                CmbOgrBolum.Items.Add(oku[0].ToString());
+            }
+            baglanti.Close();
+
+
+
 
         }
 
