@@ -147,6 +147,12 @@
     <Compile Include="FrmYoneticiDuzenle.Designer.cs">
       <DependentUpon>FrmYoneticiDuzenle.cs</DependentUpon>
     </Compile>
+    <Compile Include="MisafirOgrenciFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MisafirOgrenciFormu.Designer.cs">
+      <DependentUpon>MisafirOgrenciFormu.cs</DependentUpon>
+    </Compile>
     <Compile Include="OgrenciIzinFormu.cs">
       <SubType>Form</SubType>
     </Compile>
