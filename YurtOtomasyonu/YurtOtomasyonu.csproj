@@ -295,6 +295,9 @@
     <EmbeddedResource Include="FrmYoneticiDuzenle.resx">
       <DependentUpon>FrmYoneticiDuzenle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MisafirOgrenciFormu.resx">
+      <DependentUpon>MisafirOgrenciFormu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OgrenciIzinFormu.resx">
       <DependentUpon>OgrenciIzinFormu.cs</DependentUpon>
     </EmbeddedResource>
