@@ -22,6 +22,7 @@ namespace YurtOtomasyonu
 
         private void MisafirOgrenciFormu_Load(object sender, EventArgs e)
         {
+
             baglanti.Open();
             SqlCommand komut = new SqlCommand("Select BolumAd From Bolumler", baglanti); //bolumler tablosundakı BolumAd kısmındakı verılerı cektık.
             SqlDataReader oku = komut.ExecuteReader();
@@ -31,8 +32,14 @@ namespace YurtOtomasyonu
             }
             baglanti.Close();
 
-
-
+            baglanti.Open();
+            SqlCommand komut2 = new SqlCommand("Select OdaNo From Odalar where OdaKapasite != OdaAktif", baglanti); //where sorgusu ile boş odaların tespitini yaptık,OdaKapasite ile OdaAktif eşitse oda doludur
+            SqlDataReader oku2 = komut2.ExecuteReader();
+            while (oku2.Read())
+            {
+                CmbOgrodaNo.Items.Add(oku2[0].ToString());
+            }
+            baglanti.Close();
 
         }
 
