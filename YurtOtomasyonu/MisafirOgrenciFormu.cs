@@ -75,7 +75,20 @@ namespace YurtOtomasyonu
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("update Ogrenci set OgrAd=@p2,OgrSoyad=@p3,OgrTC=@p4,OgrTelefon=@p5,OgrDogum=@p6,OgrBolum=@p7,OgrMail=@p8,OgrOda=@p9,OgrGirisTarihi=@p10,OgrCikisTarihi=@p11 ", baglanti);
+            komut.Parameters.AddWithValue("@p2", TxtOgrAd.Text);
+            komut.Parameters.AddWithValue("@p3", TxtOgrSoyad.Text);
+            komut.Parameters.AddWithValue("@p4", MsbOgrTC.Text);
+            komut.Parameters.AddWithValue("@p5", MskOgrTelefon.Text);
+            komut.Parameters.AddWithValue("@p6", MsbOgrDogumt.Text);
+            komut.Parameters.AddWithValue("@p7", CmbOgrBolum.Text);
+            komut.Parameters.AddWithValue("@p8", TxtOgrMail.Text);
+            komut.Parameters.AddWithValue("@p9", CmbOgrodaNo.Text);
+            komut.Parameters.AddWithValue("@p10", MsbCikisT.Text);
+            komut.Parameters.AddWithValue("@p11", MsbGirisTarihi.Text);
+            komut.ExecuteNonQuery();
+            baglanti.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
