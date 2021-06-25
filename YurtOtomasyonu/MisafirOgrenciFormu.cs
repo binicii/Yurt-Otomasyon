@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace YurtOtomasyonu
 {
@@ -17,6 +18,7 @@ namespace YurtOtomasyonu
             InitializeComponent();
         }
 
+        SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-HMA2FOJ;Initial Catalog=YurtOtomasyonu;Integrated Security=True");
 
         private void MisafirOgrenciFormu_Load(object sender, EventArgs e)
         {
