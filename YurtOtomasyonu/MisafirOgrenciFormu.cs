@@ -46,21 +46,30 @@ namespace YurtOtomasyonu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            baglanti.Open();
-            SqlCommand komutkaydet = new SqlCommand("insert into Ogrenci (OgrAd,OgrSoyad,OgrTC,OgrTelefon,OgrDogum,OgrBolum,OgrMail,OgrOda,OgrVeliAdSoyad,OgrVeliAdres,OgrVeliTelefon) values(@Ad,@Soyad,@TC,@Telefon,@Dogum,@Bolum,@Mail,@Oda,@VeliAdSoyad,@VeliAdres,@VeliTelefon)", baglanti);
-            komutkaydet.Parameters.AddWithValue("@Ad", TxtOgrAd.Text);
-            komutkaydet.Parameters.AddWithValue("@Soyad", TxtOgrSoyad.Text);
-            komutkaydet.Parameters.AddWithValue("@TC", MsbOgrTC.Text);
-            komutkaydet.Parameters.AddWithValue("@Telefon", MskOgrTelefon.Text);
-            komutkaydet.Parameters.AddWithValue("@Dogum", MsbOgrDogumt.Text);
-            komutkaydet.Parameters.AddWithValue("@Bolum", CmbOgrBolum.Text);
-            komutkaydet.Parameters.AddWithValue("@Mail", TxtOgrMail.Text);
-            komutkaydet.Parameters.AddWithValue("@Oda", CmbOgrodaNo.Text);
-            komutkaydet.Parameters.AddWithValue("@VeliAdSoyad", MsbGirisTarihi.Text);
-            komutkaydet.Parameters.AddWithValue("@VeliAdres", MsbCikisT.Text);
+            try
+            {
+                
+                baglanti.Open();
+                SqlCommand komutkaydet = new SqlCommand("insert into Ogrenci (OgrAd,OgrSoyad,OgrTC,OgrTelefon,OgrDogum,OgrBolum,OgrMail,OgrOda,OgrVeliAdSoyad,OgrVeliAdres,OgrVeliTelefon) values(@Ad,@Soyad,@TC,@Telefon,@Dogum,@Bolum,@Mail,@Oda,@VeliAdSoyad,@VeliAdres,@VeliTelefon)", baglanti);
+                komutkaydet.Parameters.AddWithValue("@Ad", TxtOgrAd.Text);
+                komutkaydet.Parameters.AddWithValue("@Soyad", TxtOgrSoyad.Text);
+                komutkaydet.Parameters.AddWithValue("@TC", MsbOgrTC.Text);
+                komutkaydet.Parameters.AddWithValue("@Telefon", MskOgrTelefon.Text);
+                komutkaydet.Parameters.AddWithValue("@Dogum", MsbOgrDogumt.Text);
+                komutkaydet.Parameters.AddWithValue("@Bolum", CmbOgrBolum.Text);
+                komutkaydet.Parameters.AddWithValue("@Mail", TxtOgrMail.Text);
+                komutkaydet.Parameters.AddWithValue("@Oda", CmbOgrodaNo.Text);
+                komutkaydet.Parameters.AddWithValue("@VeliAdSoyad", MsbGirisTarihi.Text);
+                komutkaydet.Parameters.AddWithValue("@VeliAdres", MsbCikisT.Text);
 
-            komutkaydet.ExecuteNonQuery();
-            baglanti.Close();
+                komutkaydet.ExecuteNonQuery();
+                baglanti.Close();
+                MessageBox.Show("Kayıt Başarılı Bir Şekilde Gerçekleşmiştir");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("HATA!!! Lütfen Tekrar Deneyin");
+            }
         }
 
 
