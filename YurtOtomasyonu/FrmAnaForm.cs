@@ -138,7 +138,7 @@ namespace YurtOtomasyonu
 
         private void toolStripMenuItem22_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bu Otomasyon Proje Yönetimi Ödevine Ait Olup Büşra ve Zahid Tarafından Yapılmıştır.", "Öğrenci Yurt Otomasyonu", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+            MessageBox.Show("Öğrenci Yurt Otomasyonu", MessageBoxButtons.OK, MessageBoxIcon.Information); 
         }
 
         private void aBlokToolStripMenuItem_Click(object sender, EventArgs e)
